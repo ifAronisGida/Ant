@@ -44,13 +44,13 @@ public class Drone extends Ant {
             else if (this.yPos > queen.yPos) yPos--;
             else if (this.yPos < queen.yPos) yPos++;
 
-            System.out.println(name + ": moved TO: " + xPos + " , " + yPos + " FROM: ");
+            System.out.println(name + ": moved TO: " + xPos + " , " + yPos);
 
             if (Math.abs(queen.yPos - this.yPos) < 4 && Math.abs(queen.xPos - this.xPos) < 4) {
                 if (matingTime == 0) tryToMate();
             }
         }
-        else if (isMating) {
+        else {
             matingTime--;
             if (matingTime <= 0) {
                 teleportToRandomPlace();
